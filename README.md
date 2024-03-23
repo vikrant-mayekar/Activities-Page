@@ -31,7 +31,7 @@
   <h3 align="center">Amii Activities-Page</h3>
 
   <p align="center">
-    A Website created using Tailwind CSS, HTML, CSS <br /> and JavaScript that can be used as a Photography Portfolio.
+    A Website created using Tailwind CSS, HTML, CSS <br /> and JavaScript that can be used as a Activites Page of <b> <i> Amii Business Support Solutions Pvt Ltd </i></b>
     <br />
     <br />
     <a href="https://main--fanciful-rugelach-940d57.netlify.app/">View Demo</a>
