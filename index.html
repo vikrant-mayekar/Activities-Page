@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABSS- Home</title>
+  <meta name="description">
+  <!-- Favicon -->
+  <!--<link rel="icon" type="image/x-icon" href="dist/assets/favicon.ico" />-->
+  <link rel="stylesheet" href="dist/output.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Start - Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <!-- End - Fonts -->
+  <!-- Start - Fancybox Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <!-- End - Fancybox Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      content: ["./dist/*.{html,js}"],
+      theme: {
+        extend:
+                {
+                  fontFamily: {
+                    'nothingyoucoulddo': ['Nothing You Could Do', 'cursive'],
+                    'signika': ['Signika', 'sans-serif'],
+                  },
+                },
+      },
+      plugins: [],
+    }
+  </script>
+</head>
+
+<body
+  class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
+  <!-- Navbar -->
+  <header class="flex w-full overflow-hidden pt-10 pb-1">
+    <!-- Navbar -->
+    <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
+      <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
+        <!---
+        <div class="mr-4 md:mr-8 article-header">
+          <a href="index.html" class="text-2xl font-serif text-bold">
+            Amii Business <br />
+            Support Solution Pvt Ltd. <br />
+            <i>Revolutionizing Call Center Platform</i>
+          </a>
+        </div>
+      -->
+
+      <div class="mr-4 md:mr-8 article-header" style="font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+        <img src="./dist/assets/absslogo.png"  alt="Amii Business Logo" />
+        <img src="./dist/assets/heading.png" herf="index.html" alt="Amii Business Heading" />
+        <!--<a href="index.html" style="text-decoration: none; font-size: 2rem; font-weight: bold;">
+          Amii Business <br />
+          Support Solution Pvt Ltd. <br />
+          <i style="font-style: italic;">Revolutionizing Call Center Platform</i>-->
+        </a>
+      </div>
+
+    
+        <div class="ml-auto md:hidden flex items-center justify-start">
+          <button onclick="menuToggle()" @click="open = !open"
+            class="tap-highlight-transparent text-black dark:text-white w-5 h-5 relative focus:outline-none"
+            @click="open = !open">
+            <span class="sr-only">Open main menu</span>
+            <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+              <span aria-hidden="true"
+                class="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out"
+                :class="{'opacity-0': open } "></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out"
+                :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+            </div>
+          </button>
+        </div>
+        <div id="menu"
+          class="w-full h-0 transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center">
+          <ul id="ulMenu"
+            class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
+            <li class="group transition duration-300">
+              <a href="index.html" class="font-serif text-2xl tap-highlight-transparent">Activites
+                <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="dist/about_me.html" class="font-serif text-2xl tap-highlight-transparent">About Us
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Content -->
+  <div class="container mx-auto">
+    <h1 class="text-3xl pt-10 pb-8 font-serif"><i>International Women's Day on 8th of March 2024</i> <br />
+      <b>Celebrating Women's Day:</b> <i>Honoring Achievements and Empowering the Future</i></h1>
+      <p class="font-serif">
+        <i>
+          International Women's Day is a global celebration of the social,
+          economic, cultural, and political achievements of women.
+          It's a day to acknowledge the ongoing fight for gender equality and to empower women for continued success. 
+          Here at <i>Amii Business Support Solutions Pvt. Ltd.</i> 
+          we're proud to celebrate the incredible women who make our company what it is. </i>
+      </p>
+  <br>
+  <section class="text-neutral-700">
+    <div class="container w-full">
+      <div class="flex flex-wrap w-full">
+        <div class="flex w-full md:w-1/2 flex-wrap">
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/wo/8.jpg"  target="_blank"
+                data-fancybox="gallery">
+                <img alt="Womwn's Day Special"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/wo/8.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/wo/1.jpg" target="_blank"
+                data-fancybox="gallery">
+                <img alt="Womwn's Day Special"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/wo/1.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/wo/6.jpg" target="_blank"
+                data-fancybox="gallery">
+                <img alt="Womwn's Day Special"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/wo/6.jpg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex w-full md:w-1/2 flex-wrap">
+          <div class="w-full p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/wo/15.jpg" target="_blank"
+                data-fancybox="gallery">
+                <img alt="Womwn's Day Special"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/wo/15.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/wo/2.jpg"
+                data-fancybox="gallery">
+                <img alt="Womwn's Day Special"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/wo/2.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/wo/17.jpg"
+                data-fancybox="gallery">
+                <img alt="a blue sky with a lot of red and orange clouds"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/wo/17.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/wo/9.jpg"
+                data-fancybox="gallery">
+                <img alt="a view of the ocean from the top of a hill"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/wo/9.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/wo/14.jpg"
+                data-fancybox="gallery">
+                <img alt="a pheasant flying in the sky with its wings spread"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/wo/14.jpg" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container mx-auto">
+          <h1 class="text-3xl pt-10 pb-8 font-serif"><i>RNR - Realization and Reconciliation on 9th of March 2024</i> <br />
+            <b>Recognition & Rewards: </b> <i>Celebrating Your Achievements at Amii's RNR Team  </i></h1>
+          <p class="font-serif">
+            <i>
+              At Amii Business Support Solutions Pvt. Ltd., 
+              we firmly believe in recognizing and rewarding the exceptional contributions of our RNR (Realization and Reconciliation)
+              team members.  Your dedication, hard work, 
+              and commitment to excellence are the driving force behind our success
+            </i> 
+        </p>
+        <br />
+      </div>
+
+      <div class="flex w-full md:w-1/2 flex-wrap">
+        <div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="./dist/assets/rnr/1.jpg"  target="_blank"
+              data-fancybox="gallery">
+              <img alt="Womwn's Day Special"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                src="./dist/assets/rnr/1.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="./dist/assets/rnr/2.jpg" target="_blank"
+              data-fancybox="gallery">
+              <img alt="Womwn's Day Special"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                src="./dist/assets/rnr/2.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="w-full p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="./dist/assets/rnr/3.jpg" target="_blank"
+              data-fancybox="gallery">
+              <img alt="Womwn's Day Special"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                src="./dist/assets/rnr/3.jpg" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full md:w-1/2 flex-wrap">
+        <div class="w-full p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="./dist/assets/rnr/4.jpg" target="_blank"
+              data-fancybox="gallery">
+              <img alt="Womwn's Day Special"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                src="./dist/assets/rnr/4.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="./dist/assets/rnr/5.jpg"
+              data-fancybox="gallery">
+              <img alt="Womwn's Day Special"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                src="./dist/assets/rnr/5.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="./dist/assets/rnr/6.jpg"
+              data-fancybox="gallery">
+              <img alt="a blue sky with a lot of red and orange clouds"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                src="./dist/assets/rnr/6.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 p-1">
+          <div class="overflow-hidden h-full w-full">
+            <a href="./dist/assets/rnr/7.jpg"
+              data-fancybox="gallery">
+              <img alt="a view of the ocean from the top of a hill"
+                class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                src="./dist/assets/rnr/7.jpg" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+        <div class="container mx-auto">
+          <h1 class="text-3xl pt-10 pb-8 font-serif"> <i>Pongal on 15th of January 2024</i> <br />
+            <b>Celebrating Pongal: </b> <i>A Harvest Festival Filled with Joy and Gratitude</i></h1>
+            <p class="font-serif">
+              <i>
+                Pongal, also known as Makar Sankranti, 
+                is a vibrant harvest festival celebrated across India.
+                It marks the beginning of the sun's northward journey, 
+                signifying longer days and the promise of a bountiful harvest.
+                This four-day festival is a time for families and communities to come together, 
+                express gratitude for nature's bounty, and celebrate new beginnings.</i>
+          </p>
+        </div>
+        <br>
+
+
+        <div class="flex w-full md:w-1/2 flex-wrap">
+          <div class="w-full p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/pongol/2.jpg"
+                data-fancybox="gallery">
+                <img alt="a statue of a man next to a statue of a woman"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/pongol/2.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/pongol/3.jpg"
+                data-fancybox="gallery">
+                <img alt="a city street with tall buildings in the background"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/pongol/3.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/trad/2.jpg"
+                data-fancybox="gallery">
+                <img alt="25 de abril bridge spanning over Tagus river"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/trad/2.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/trad/3.jpg"
+                data-fancybox="gallery">
+                <img alt="a lot of lanterns floating in the air at night"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/trad/3.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/trad/4.jpg"
+                data-fancybox="gallery">
+                <img alt="a flock of seaguls flying over a body of water"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/trad/4.jpg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex w-full md:w-1/2 flex-wrap">
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/trad/5.jpg"
+                data-fancybox="gallery">
+                <img alt="a statue of a headless angel"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/trad/5.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/trad/7.jpg"
+                data-fancybox="gallery">
+                <img alt="Monument to the Discoveries viewed from top to bottom"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/trad/7.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/trad/8.jpg"
+                data-fancybox="gallery">
+                <img
+                  alt="a group of people walking along the museum of art, architecture and technology of lisbon next to the Tagus river"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/trad/8.jpg" />
+              </a>
+            </div>
+            </div>
+            </div>
+
+            <div class="container mx-auto">
+              <h1 class="text-3xl pt-10 pb-8 font-serif"><i>Amii Cricket Tournament on 7th of January 2024</i> <br />
+                <b>ABSS Cricket Tournament: </b> <i> A Smashing Success! </i></h1>
+              <p class="font-serif">
+                <i>
+                  Calling all cricket fans at ABSS! 
+                  We recently wrapped up our highly anticipated Cricket Tournament, 
+                  and what a thrilling event it was! 
+                  The energy on the field was electric as colleagues turned teammates, 
+                  battling it out in a spirit of friendly competition.
+                </i> 
+            </p>
+            <br />
+          </div>
+
+          <div class="flex w-full md:w-1/2 flex-wrap">
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/cricket/5.jpg"  target="_blank"
+                data-fancybox="gallery">
+                <img alt="Amii Cricket Tournament"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/cricket/5.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/cricket/7.jpg" target="_blank"
+                data-fancybox="gallery">
+                <img alt="Amii Cricket Tournament"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/cricket/7.jpg" />
+              </a>
+            </div>
+          </div>
+          <div class="w-full p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/cricket/3.jpg" target="_blank"
+                data-fancybox="gallery">
+                <img alt="Amii Cricket Tournament"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/cricket/3.jpg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex w-full md:w-1/2 flex-wrap">
+          <div class="w-full p-1">
+            <div class="overflow-hidden h-full w-full">
+              <a href="./dist/assets/cricket/1.jpg" target="_blank"
+                data-fancybox="gallery">
+                <img alt="Amii Cricket Tournament"
+                  class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                  src="./dist/assets/cricket/1.jpg" />
+              </a>
+            </div>
+          </div>
+          </div>
+
+            <div class="container mx-auto">
+              <h1 class="text-3xl pt-10 pb-8 font-serif"><i> Ganesh Chaturthi on 19th September 2023</i> <br />
+                <b>Celebrating Ganesh Chaturthi: </b> <i>The Arrival of Lord Ganesha</i></h1>
+                <p class="font-serif">
+                  <i>
+                    In the spirit of Ganesh Chaturthi, 
+                    the ten-day festival honoring Lord Ganesha, 
+                    the embodiment of wisdom, prosperity, and new beginnings,
+                    Amii Business Support Solution Pvt. Ltd.
+                    will be joining the festivities! 
+                  </i> 
+              </p>
+              <br />
+            </div>
+
+            <div class="flex w-full md:w-1/2 flex-wrap">
+              <div class="w-full p-1">
+                <div class="overflow-hidden h-full w-full">
+                  <a href="./dist/assets/ganu/6.jpg"
+                    data-fancybox="gallery">
+                    <img alt="a statue of a man next to a statue of a woman"
+                      class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                      src="./dist/assets/ganu/6.jpg" />
+                  </a>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 p-1">
+                <div class="overflow-hidden h-full w-full">
+                  <a href="./dist/assets/ganu/1.jpg"
+                    data-fancybox="gallery">
+                    <img alt="a city street with tall buildings in the background"
+                      class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                      src="./dist/assets/ganu/1.jpg" />
+                  </a>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 p-1">
+                <div class="overflow-hidden h-full w-full">
+                  <a href="./dist/assets/ganu/2.jpg"
+                    data-fancybox="gallery">
+                    <img alt="25 de abril bridge spanning over Tagus river"
+                      class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                      src="./dist/assets/ganu/2.jpg" />
+                  </a>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 p-1">
+                <div class="overflow-hidden h-full w-full">
+                  <a href="./dist/assets/ganu/3.jpg"
+                    data-fancybox="gallery">
+                    <img alt="a lot of lanterns floating in the air at night"
+                      class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                      src="./dist/assets/ganu/3.jpg" />
+                  </a>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 p-1">
+                <div class="overflow-hidden h-full w-full">
+                  <a href="./dist/assets/ganu/4.jpg"
+                    data-fancybox="gallery">
+                    <img alt="a flock of seaguls flying over a body of water"
+                      class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                      src="./dist/assets/ganu/4.jpg" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex w-full md:w-1/2 flex-wrap">
+              <div class="w-full md:w-1/2 p-1">
+                <div class="overflow-hidden h-full w-full">
+                  <a href="./dist/assets/ganu/7.jpg"
+                    data-fancybox="gallery">
+                    <img alt="a statue of a headless angel"
+                      class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                      src="./dist/assets/ganu/7.jpg" />
+                  </a>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 p-1">
+                <div class="overflow-hidden h-full w-full">
+                  <a href="./dist/assets/ganu/8.jpg"
+                    data-fancybox="gallery">
+                    <img alt="Monument to the Discoveries viewed from top to bottom"
+                      class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                      src="./dist/assets/ganu/8.jpg" />
+                  </a>
+                </div>
+              </div>
+              <div class="w-full p-1">
+                <div class="overflow-hidden h-full w-full">
+                  <a href="./dist/assets/ganu/9.jpg"
+                    data-fancybox="gallery">
+                    <img
+                      alt="a group of people walking along the museum of art, architecture and technology of lisbon next to the Tagus river"
+                      class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                      src="./dist/assets/ganu/9.jpg" />
+                  </a>
+                </div>
+              </div>
+          
+              <div class="container mx-auto">
+                <h1 class="text-3xl pt-10 pb-8 font-serif"><b>गणपती बाप्पा मोरया </b> <i> मंगलमूर्ती मोरया</i></h1>
+                  <!--<p class="font-serif">
+                    <i>
+                      Calling all cricket fans at ABSS! 
+                      We recently wrapped up our highly anticipated Cricket Tournament, 
+                      and what a thrilling event it was! 
+                      The energy on the field was electric as colleagues turned teammates, 
+                      battling it out in a spirit of friendly competition.<br />
+                    </i> 
+                </p>-->
+              </div>
+              </div>
+
+              
+          
+
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="max-w-screen-xl py-16 mx-auto">
+      <div class="grid grid-cols-1 gap-8 text-center mx-auto">
+        <div>
+          <h6 class="mt-4 text-sm text-gray-600 dark:text-gray-300 font-serif"> 
+            <b>ABSS -></b"> Amii Business<br>
+              Support Solutions Pvt Ltd.<br>
+              <i>Revolutionizing Call Center Platform</i>
+          </h6>
+          <!--<p class="font-serif"><b>ABSS -></b class="font-size-medium"> Amii Business<br>
+          Support Solutions Pvt Ltd.<br>
+          <i>Revolutionizing Call Center Platform</i>
+          </p>-->
+          <p class="mt-4 text-sm text-gray-600 dark:text-gray-300 font-serif address-font">
+            <b> Address: </b> 
+            Tower No 4, Railway Station Complex,<br>
+            CBD Belapur, Sector 11,<br>
+            Navi Mumbai - 400614
+          </p>
+          <div class="flex mx-auto">
+            <div class="mx-auto space-x-6 flex mt-8 text-gray-600 dark:text-gray-300">
+              <a class="transition duration-300 hover:opacity-75" href="https://www.instagram.com/abss_pvt.ltd?igsh=MXJvZmJzbWtjYXJm" target="_blank"
+                rel="noreferrer">
+                <span class="sr-only"> Instagram </span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                </svg>
+              </a>
+              <a class="transition duration-300 hover:opacity-75" href="https://www.linkedin.com/company/abss-amii-business-support-solution-pvt-ltd/mycompany/?viewAsMember=true" target="_blank"
+                rel="noreferrer">
+                <span class="sr-only">LinkedIn</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                </svg>
+              </a>
+              <a class="transition duration-300 hover:opacity-75" href="https://wa.link/031vyv" target="_blank"
+                rel="noreferrer">
+                <span class="sr-only">WhatsApp</span>
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                  <path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"></path>
+              </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-8 text-xs text-gray-600 dark:text-gray-300 text-center">
+        © 2024 Developed and Designed by
+        <a href="https://www.abss.co.in" class="underline"> AMII Business<br> Support Solution Pvt Ltd.</a>
+      </p>
+    </div>
+  </footer>
+  <!-- Script for the LightBox -->
+  <script>
+    Fancybox.bind("[data-fancybox]", {});
+  </script>
+  <script src="dist/fade_in.js"></script>
+  <script src="dist/menu.js"></script>
+</body>
+
+</html>
