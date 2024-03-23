@@ -25,7 +25,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/vikrant-mayekar/Activities-Page">
-    <img src="dist/assets/absslogo.png" alt="Logo" width="80" height="80">
+    <img src="dist/assets/absslogo.png" alt="Logo" width="250" height="150">
   </a>
 
   <h3 align="center">Amii Activities-Page</h3>
